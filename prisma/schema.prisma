@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      =  env("NEXT_PUBLIC_PROD_DATABASE_URL")
+}
+
+model Interview {
+  id             Int      @id @default(autoincrement())
+  mockId         String      @unique
+  jsonMockResp   String
+  jobPosition    String
+  jobDescription String
+  experience     String
+  createdBy      String   
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model UserAnswer{
+  id Int @id @default(autoincrement())
+  mockId     String 
+  question   String
+  correctAnswer String
+  userAnswer String
+  feedback String
+  Rating   String
+  userEmail  String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+}

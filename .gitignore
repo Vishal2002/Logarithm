@@ -7,9 +7,12 @@
 .yarn/install-state.gz
 
 .env
-
+.env.local
 # testing
 /coverage
+prisma/migrations
+
+data/*
 
 # next.js
 /.next/
