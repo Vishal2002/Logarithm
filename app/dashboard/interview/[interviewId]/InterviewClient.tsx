@@ -49,7 +49,7 @@ export default function InterviewClient({ interviewData }: { interviewData: Inte
           )}
           <Button variant={'ghost'} onClick={() => setWebCam(true)}>Enable Microphone and WebCam</Button>
           <div className='flex justify-end items-end mt-4'>
-            <div className='mr-2'>Mock ID: {interviewData.mockId}</div>
+           
             <Button onClick={() => router.push(`/dashboard/interview/${interviewData?.mockId}`)}>
               Start Interview
             </Button>
