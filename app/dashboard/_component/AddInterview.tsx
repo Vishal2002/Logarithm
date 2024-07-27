@@ -10,7 +10,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog"
 import { Button } from '@/components/ui/button'
-import { generateResponse } from '@/utils/GeminiAPI'
+import { generateInterviewQuestions} from '@/utils/GeminiAPI'
 import { LoaderCircle } from 'lucide-react'
 import axios from 'axios';
 import { useUser } from '@clerk/nextjs'
@@ -53,9 +53,8 @@ const saveInterview = async (data: {
     event.preventDefault();
     setLoading(true);
     try {
-      // console.log(experience, jobDescription, jobRole,user?.primaryEmailAddress?.emailAddress!);
-      const prompt = `Job Role: ${jobRole}, Job Description: ${jobDescription}, Experience: ${experience} Years. As an Interviewer, provide ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} Technical Questions with Answers based on these requirements in JSON format.`;
-      const response = await generateResponse(prompt);
+      const response = await generateInterviewQuestions(jobRole, jobDescription, experience!);
+      setQuestions(response);
       setQuestions(response);
       if(response) {
       const interview= await saveInterview({

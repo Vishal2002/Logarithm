@@ -6,7 +6,7 @@ import Webcam from 'react-webcam'
 import useSpeechToText from 'react-hook-speech-to-text';
 import { Mic } from 'lucide-react'
 import { useToast } from "@/components/ui/use-toast"
-import { generateResponse } from '@/utils/GeminiAPI'
+import { generateFeedback } from '@/utils/GeminiAPI'
 
 interface SpeechResult {
   transcript?: string;
@@ -59,8 +59,7 @@ const SaveUserAnswer = async () => {
         return;
       }
       try {
-        const feedbackPrompt = `Based on the Question: ${mockInterviewQuestion?.[activeQuestionIndex]?.question} and the answer: ${userAnswer}. Please give us the Rating out of 100 and also give the area of improvement in just 3 to 5 lines give the improvement information in json format with rating field and feedback field.`
-        const result = await generateResponse(feedbackPrompt);
+        const result = await generateFeedback(mockInterviewQuestion?.[activeQuestionIndex]?.question!, userAnswer);
         setFeedback(result);
 
         // Save user answer to the database
