@@ -34,15 +34,15 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
               <li><Link href="/help">Help Center</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="https://codreline.hashnode.dev/">Blog</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-lg font-semibold mb-4">Developers</h3>
             <ul className="space-y-2">
-              <li><Link href="/download/intel">Github</Link></li>
-              <li><Link href="/download/apple">Discord</Link></li>
+              <li><Link href="https://github.com/Vishal2002/Logarithm">Github</Link></li>
+              <li><Link href="https://discord.gg/ZhQ6gUdz2s">Discord</Link></li>
             </ul>
           </div>
         </div>

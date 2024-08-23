@@ -85,8 +85,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-black relative flex flex-col antialiased">
-      <NavbarDemo />
+    // <div className="min-h-screen w-full bg-black relative flex flex-col antialiased">
+    <>
+      
       
       <main className="flex-grow flex flex-col">
         <div className="flex-grow w-full bg-grid-white/[0.09] relative flex items-center justify-center py-20">
@@ -128,9 +129,8 @@ export default function Home() {
         </div>
       </main>
       <div>
-
-<Footer/>
 </div>
-    </div>
+</>
+   
   );
 }
